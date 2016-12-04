@@ -22,7 +22,7 @@ lazy val logrusCommonsProject = RootProject(uri("https://github.com/Driox/logrus
 
 and then you may use it
 
-```
+```scala
 import us.logr.utils._
 
 val s = us.logr.utils.StringUtils.deAccent("hello José")
