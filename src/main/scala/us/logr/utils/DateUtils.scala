@@ -11,13 +11,13 @@ object DateUtils {
   def now(): ZonedDateTime = ZonedDateTime.now(ZoneOffset.UTC)
 
   def stringToDate(value: String, format: String): TemporalAccessor = {
-    val format = DateTimeFormatter.ofPattern(format)
-    format.parse(value)
+    val formater = DateTimeFormatter.ofPattern(format)
+    formater.parse(value)
   }
 
   def dateToString(date: TemporalAccessor, format: String): String = {
-    val format = DateTimeFormatter.ofPattern(format)
-    format.format(date)
+    val formater = DateTimeFormatter.ofPattern(format)
+    formater.format(date)
   }
 
   /**

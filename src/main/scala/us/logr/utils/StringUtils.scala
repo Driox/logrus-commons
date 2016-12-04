@@ -5,7 +5,6 @@ import java.text.DecimalFormat
 import java.text.Normalizer
 import java.util.regex.Pattern
 
-import scala.util.control.NonFatal
 import scala.util.Try
 
 object StringUtils {

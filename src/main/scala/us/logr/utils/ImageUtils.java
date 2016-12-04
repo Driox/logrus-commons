@@ -7,15 +7,20 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class ImageUtils {
+
+    private static final Logger log = LoggerFactory.getLogger(ImageUtils.class);
 
     public static BufferedImage imageFromByte(byte[] imageInByte){
         InputStream in = new ByteArrayInputStream(imageInByte);
         try {
             BufferedImage bImageFromConvert = ImageIO.read(in);
             return bImageFromConvert;
-        }catch (IOException e){
-            Logger.error("Can't parse image from byte", e);
+        } catch (IOException e){
+            log.error("Can't parse image from byte", e);
             return null;
         }
     }

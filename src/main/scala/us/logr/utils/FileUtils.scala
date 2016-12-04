@@ -1,6 +1,8 @@
 package us.logr.utils
 
 import java.io._
+import scala.language.implicitConversions
+import scala.language.reflectiveCalls
 
 class FileUtils(file: File) {
 
@@ -36,8 +38,8 @@ class FileUtils(file: File) {
     finally { br.close }
   }
 
-  def deleteAll: Unit = {
-    def deleteFile(dfile: File): Unit = {
+  def deleteAll(): Unit = {
+    def deleteFile(dfile: File): Boolean = {
       if (dfile.isDirectory) {
         dfile.listFiles.foreach { f => deleteFile(f) }
       }
