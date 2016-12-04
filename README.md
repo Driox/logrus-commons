@@ -13,7 +13,20 @@ Java 1.8 or later.
 Add this dependency to your project's POM:
 
 ```scala
-libraryDependencies += "us.logr" %% "logrus-commons" % "1.0.0"
+lazy val root = Project("root", file("."))
+                    .dependsOn(logrusCommonsProject)
+
+lazy val logrusCommonsProject = RootProject(uri("https://github.com/Driox/logrus-commons.git"))
+
+```
+
+and then you may use it
+
+```
+import us.logr.utils._
+
+val s = us.logr.utils.StringUtils.deAccent("hello José")
+println(s) // should print "hello Jose"
 ```
 
 ### Others
